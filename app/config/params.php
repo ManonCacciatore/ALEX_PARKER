@@ -1,4 +1,6 @@
 <?php
+$content = '';
+$title = '';
 
 
 define('DB_HOST', 'localhost:3307');

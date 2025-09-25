@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <?php include '../app/views/templates/partials/_head.php'; ?>
 </head>
 
 <body>
-    <h1>Test</h1>
+
+    <?php include '../app/views/templates/partials/_loader.php'; ?>
+    <?php include '../app/views/templates/partials/_main.php'; ?>
+    <?php include '../app/views/templates/partials/_scrollUp.php'; ?>
+    <?php include '../app/views/templates/partials/_scripts.php'; ?>
+
 </body>
 
 </html>
