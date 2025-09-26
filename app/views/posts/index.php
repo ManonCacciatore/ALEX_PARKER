@@ -15,7 +15,7 @@ foreach ($posts as $post) :
             <span><?php echo date('Y', $created_at); ?>-<?php echo date('m', $created_at); ?>-<?php echo date('d', $created_at); ?></span> | <span><?php echo $post['category_name']; ?></span>
         </div>
         <p>
-            <?php echo $post['text']; ?>
+            <?php echo Core\Helpers\truncate($post['text']); ?>
         </p>
         <a
             href="single.html"
