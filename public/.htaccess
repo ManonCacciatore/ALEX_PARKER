@@ -7,6 +7,14 @@ RewriteEngine on
 # PATTERN: ?posts=show&id=x
 RewriteRule ^posts/([1-9][0-9]*)/[a-z0-9][a-z0-9\-]*$ index.php?posts=show&id=$1 [L]
 
+
+RewriteRule ^posts\/add\/form$ index.php?posts=addForm [L]
+
+
+RewriteRule ^posts\/add\/insert$ index.php?posts=addInsert [L]
+
+
 # --------------------------------------------------
-RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
+RewriteCond %{REQUEST_URI} !.(?:css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$ [NC]
 RewriteRule ^(.*)$ index.php [L]
+

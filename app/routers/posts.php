@@ -8,4 +8,10 @@ switch ($_GET['posts']):
     case 'show':
         PostsController\showAction($connexion, $_GET['id']);
         break;
+    case 'addForm':
+        PostsController\addFormAction($connexion);
+        break;
+    case 'addInsert':
+        PostsController\addInsertAction($connexion, $_POST);
+        break;
 endswitch;

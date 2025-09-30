@@ -1,6 +1,6 @@
 <ul class="menu-link">
     <?php
-    include '../app/models/categoriesModel.php';
+    include_once '../app/models/categoriesModel.php';
     $categories = \App\Models\CategoriesModel\findAll($connexion);
     foreach ($categories as $category):
     ?>

@@ -33,3 +33,23 @@ function showAction(PDO $connexion, int $id): void
     include '../app/views/posts/show.php';
     $content = ob_get_clean();
 }
+
+function addFormAction(PDO $connexion): void
+{
+    include_once '../app/models/categoriesModel.php';
+    $categories = \App\Models\CategoriesModel\findAll($connexion);
+
+    global $content, $title;
+    $title = 'Add a post';
+    ob_start();
+    include '../app/views/posts/addForm.php';
+    $content = ob_get_clean();
+}
+
+
+function addInsertAction(PDO $connexion, array $data): void
+{
+    include_once '../app/models/postsModel.php';
+    $reponse = PostsModel\insertOne($connexion, $data);
+    header('Location:' . PUBLIC_BASE_URL);
+}
