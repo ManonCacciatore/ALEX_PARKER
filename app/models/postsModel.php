@@ -52,3 +52,13 @@ function insertOne($connexion, $data)
     $rs->bindValue(':category_id', $data['category_id'], PDO::PARAM_INT);
     return $rs->execute();
 }
+
+
+function deleteOneById($connexion, $id)
+{
+    $sql = "DELETE FROM posts
+            WHERE id = :id;";
+    $rs = $connexion->prepare($sql);
+    $rs->bindValue(':id', $id, PDO::PARAM_INT);
+    return $rs->execute();
+}

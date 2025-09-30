@@ -14,4 +14,8 @@ switch ($_GET['posts']):
     case 'addInsert':
         PostsController\addInsertAction($connexion, $_POST);
         break;
+    case "delete":
+        PostsController\deleteAction($connexion, $_GET['id']);
+        break;
+
 endswitch;

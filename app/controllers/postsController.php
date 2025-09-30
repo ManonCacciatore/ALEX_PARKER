@@ -53,3 +53,11 @@ function addInsertAction(PDO $connexion, array $data): void
     $reponse = PostsModel\insertOne($connexion, $data);
     header('Location:' . PUBLIC_BASE_URL);
 }
+
+
+function deleteAction(PDO $connexion, int $id)
+{
+    include_once '../app/models/postsModel.php';
+    $response = PostsModel\deleteOneById($connexion, $id);
+    header('Location:' . PUBLIC_BASE_URL);
+}
