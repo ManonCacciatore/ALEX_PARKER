@@ -46,7 +46,7 @@
 
                 <!-- Post Buttons -->
                 <div>
-                    <a href="form.html" type="button" class="btn btn-primary">Edit Post</a>
+                    <a href="posts/<?php echo $post['id']; ?>/<?php echo \Core\Helpers\slugify($post['title']); ?>/edit/form" type="button" class="btn btn-primary">Edit Post</a>
                     <a
                         href="posts/<?php echo $post['id']; ?>/<?php echo \Core\Helpers\slugify($post['title']); ?>/delete"
                         type="button"

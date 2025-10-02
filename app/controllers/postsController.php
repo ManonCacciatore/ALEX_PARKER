@@ -61,3 +61,19 @@ function deleteAction(PDO $connexion, int $id)
     $response = PostsModel\deleteOneById($connexion, $id);
     header('Location:' . PUBLIC_BASE_URL);
 }
+
+
+function editFormAction(PDO $connexion, $id)
+{
+    include_once '../app/models/postsModel.php';
+    $post = PostsModel\findOneById($connexion, $id);
+
+    include_once '../app/models/categoriesModel.php';
+    $categories = \App\Models\CategoriesModel\findAll($connexion);
+
+    global $content, $title;
+    $title = "Edit a post";
+    ob_start();
+    include '../app/views/posts/editForm.php';
+    $content = ob_get_clean();
+}
