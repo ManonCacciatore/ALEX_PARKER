@@ -63,7 +63,7 @@ function deleteAction(PDO $connexion, int $id)
 }
 
 
-function editFormAction(PDO $connexion, $id)
+function editFormAction(PDO $connexion, int $id)
 {
     include_once '../app/models/postsModel.php';
     $post = PostsModel\findOneById($connexion, $id);
@@ -76,4 +76,12 @@ function editFormAction(PDO $connexion, $id)
     ob_start();
     include '../app/views/posts/editForm.php';
     $content = ob_get_clean();
+}
+
+function editUpdateAction(PDO $connexion, int $id, array $data)
+{
+    include_once '../app/models/postsModel.php';
+    $response = PostsModel\updateOneById($connexion, $id, $data);
+
+    header('Location:' . PUBLIC_BASE_URL . 'posts/' . $id . '/' . \Core\Helpers\slugify($data['title']));
 }

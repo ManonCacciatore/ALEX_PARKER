@@ -18,7 +18,7 @@
             <!-- Post Headline End -->
 
             <!-- Form Start -->
-            <form action="posts/add/insert" method="post">
+            <form action="posts/<?php echo $post['id']; ?>/<?php echo \Core\Helpers\slugify($post['title']); ?>/edit/update" method="post">
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input

@@ -18,7 +18,7 @@ RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9][a-z0-9-]*)/delete$ index.php?posts=de
 
 RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9][a-z0-9-]*)/edit/form$ index.php?posts=editForm&id=$1 [L]
 
-
+RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9][a-z0-9-]*)/edit/update$ index.php?posts=editUpdate&id=$1 [L]
 # --------------------------------------------------
 RewriteCond %{REQUEST_URI} !.(?:css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$ [NC]
 RewriteRule ^(.*)$ index.php [L]
