@@ -2,7 +2,6 @@ RewriteEngine on
 
 # ROUTES
 
-
 # posts.show
 # URL: posts/id/slug.html
 # PATTERN: ?posts=show&id=x
