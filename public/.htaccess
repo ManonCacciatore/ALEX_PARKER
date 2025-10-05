@@ -2,24 +2,38 @@ RewriteEngine on
 
 # ROUTES
 
+
 # posts.show
-# URL: posts/id/slug
+# URL: posts/id/slug.html
 # PATTERN: ?posts=show&id=x
-RewriteRule ^posts/([1-9][0-9]*)/[a-z0-9][a-z0-9\-]*$ index.php?posts=show&id=$1 [L]
+RewriteRule ^posts/([1-9][0-9]*)/[a-z0-9][a-z0-9\-]*\.html$ index.php?posts=show&id=$1 [L]
 
+# posts.addForm
+# URL: posts/add/form.html
+# PATTERN: ?posts=addForm
+RewriteRule ^posts\/add\/form\.html$ index.php?posts=addForm [L]
 
-RewriteRule ^posts\/add\/form$ index.php?posts=addForm [L]
+# posts.addInsert
+# URL: posts/add/insert.html
+# PATTERN: ?posts=addInsert
+RewriteRule ^posts\/add\/insert\.html$ index.php?posts=addInsert [L]
 
+# posts.delete
+# URL: posts/id/slug/delete.html
+# PATTERN: ?posts=delete&id=x
+RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9][a-z0-9-]*)/delete\.html$ index.php?posts=delete&id=$1 [L]
 
-RewriteRule ^posts\/add\/insert$ index.php?posts=addInsert [L]
+# posts.editForm
+# URL: posts/id/slug/edit/form.html
+# PATTERN: ?posts=editForm&id=x
+RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9][a-z0-9-]*)/edit/form\.html$ index.php?posts=editForm&id=$1 [L]
 
+# posts.editUpdate
+# URL: posts/id/slug/edit/update.html
+# PATTERN: ?posts=editUpdate&id=x
+RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9][a-z0-9-]*)/edit/update\.html$ index.php?posts=editUpdate&id=$1 [L]
 
-RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9][a-z0-9-]*)/delete$ index.php?posts=delete&id=$1 [L]
-
-RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9][a-z0-9-]*)/edit/form$ index.php?posts=editForm&id=$1 [L]
-
-RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9][a-z0-9-]*)/edit/update$ index.php?posts=editUpdate&id=$1 [L]
 # --------------------------------------------------
-RewriteCond %{REQUEST_URI} !.(?:css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$ [NC]
+RewriteCond %{REQUEST_URI} !\.(?:css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$ [NC]
 RewriteRule ^(.*)$ index.php [L]
 

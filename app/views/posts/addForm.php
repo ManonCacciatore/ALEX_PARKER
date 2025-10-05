@@ -3,7 +3,7 @@
 <!--<div class="col-md-12 page-body">-->
 <div class="row">
     <div class="sub-title">
-        <a href="index.html" title="Go to Home Page">
+        <a href="<?php echo PUBLIC_BASE_URL; ?>" title="Go to Home Page">
             <h2>Back Home</h2>
         </a>
         <a href="#comment" class="smoth-scroll"><i class="icon-bubbles"></i></a>
@@ -18,7 +18,7 @@
             <!-- Post Headline End -->
 
             <!-- Form Start -->
-            <form action="posts/add/insert" method="post">
+            <form action="posts/add/insert.html" method="post">
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input

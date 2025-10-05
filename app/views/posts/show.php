@@ -3,7 +3,7 @@
 <div class="col-md-12 page-body">
     <div class="row">
         <div class="sub-title">
-            <a href="/" title="Go to Home Page">
+            <a href="<?php echo PUBLIC_BASE_URL; ?>" title="Go to Home Page">
                 <h2>Back Home</h2>
             </a>
             <a href="#comment" class="smoth-scroll"><i class="icon-bubbles"></i></a>
@@ -46,9 +46,9 @@
 
                 <!-- Post Buttons -->
                 <div>
-                    <a href="posts/<?php echo $post['id']; ?>/<?php echo \Core\Helpers\slugify($post['title']); ?>/edit/form" type="button" class="btn btn-primary">Edit Post</a>
+                    <a href="posts/<?php echo $post['id']; ?>/<?php echo \Core\Helpers\slugify($post['title']); ?>/edit/form.html" type="button" class="btn btn-primary">Edit Post</a>
                     <a
-                        href="posts/<?php echo $post['id']; ?>/<?php echo \Core\Helpers\slugify($post['title']); ?>/delete"
+                        href="posts/<?php echo $post['id']; ?>/<?php echo \Core\Helpers\slugify($post['title']); ?>/delete.html"
                         type="button"
                         class="btn btn-secondary"
                         role="button">Delete Post</a>

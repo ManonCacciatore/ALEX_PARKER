@@ -83,5 +83,5 @@ function editUpdateAction(PDO $connexion, int $id, array $data)
     include_once '../app/models/postsModel.php';
     $response = PostsModel\updateOneById($connexion, $id, $data);
 
-    header('Location:' . PUBLIC_BASE_URL . 'posts/' . $id . '/' . \Core\Helpers\slugify($data['title']));
+    header('Location:' . PUBLIC_BASE_URL . 'posts/' . $id . '/' . \Core\Helpers\slugify($data['title']) . ".html");
 }
