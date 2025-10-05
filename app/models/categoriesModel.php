@@ -5,7 +5,7 @@ namespace App\Models\CategoriesModel;
 use \PDO;
 
 
-function findAll(PDO $connexion)
+function findAll(PDO $connexion): array
 {
     $sql = "SELECT *
             FROM categories
@@ -15,7 +15,7 @@ function findAll(PDO $connexion)
 }
 
 
-function findAllWithPostCount(PDO $connexion)
+function findAllWithPostCount(PDO $connexion): array
 {
     $sql = "SELECT c.*, COUNT(p.id) AS post_count
         FROM categories c

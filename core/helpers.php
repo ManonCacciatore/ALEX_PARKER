@@ -2,7 +2,7 @@
 
 namespace Core\Helpers;
 
-function truncate(string $text, int $lenght = 150)
+function truncate(string $text, int $lenght = 150): string
 {
 
     if (strlen($text) > $lenght) {

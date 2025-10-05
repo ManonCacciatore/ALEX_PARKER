@@ -35,7 +35,7 @@ function findOneById(PDO $connexion, int $id): array
 }
 
 
-function insertOne($connexion, $data)
+function insertOne(PDO $connexion, array $data): bool
 {
 
     $sql = "INSERT INTO posts
@@ -54,7 +54,7 @@ function insertOne($connexion, $data)
 }
 
 
-function deleteOneById($connexion, $id)
+function deleteOneById(PDO $connexion, int $id): bool
 {
     $sql = "DELETE FROM posts
             WHERE id = :id;";
@@ -63,7 +63,7 @@ function deleteOneById($connexion, $id)
     return $rs->execute();
 }
 
-function updateOneById($connexion, $id, $data)
+function updateOneById(PDO $connexion, int $id, array $data): bool
 {
 
     $sql = "UPDATE posts

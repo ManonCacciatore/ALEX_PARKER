@@ -55,7 +55,7 @@ function addInsertAction(PDO $connexion, array $data): void
 }
 
 
-function deleteAction(PDO $connexion, int $id)
+function deleteAction(PDO $connexion, int $id): void
 {
     include_once '../app/models/postsModel.php';
     $response = PostsModel\deleteOneById($connexion, $id);
@@ -63,7 +63,7 @@ function deleteAction(PDO $connexion, int $id)
 }
 
 
-function editFormAction(PDO $connexion, int $id)
+function editFormAction(PDO $connexion, int $id): void
 {
     include_once '../app/models/postsModel.php';
     $post = PostsModel\findOneById($connexion, $id);
@@ -78,7 +78,7 @@ function editFormAction(PDO $connexion, int $id)
     $content = ob_get_clean();
 }
 
-function editUpdateAction(PDO $connexion, int $id, array $data)
+function editUpdateAction(PDO $connexion, int $id, array $data): void
 {
     include_once '../app/models/postsModel.php';
     $response = PostsModel\updateOneById($connexion, $id, $data);
